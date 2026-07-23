@@ -23,7 +23,7 @@ async function pbkdf2(pin: string, salt: Uint8Array): Promise<ArrayBuffer> {
     ["deriveBits"],
   );
   return crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: ITER, hash: "SHA-256" },
+    { name: "PBKDF2", salt: salt as BufferSource, iterations: ITER, hash: "SHA-256" },
     key,
     256,
   );
@@ -47,7 +47,7 @@ export async function verifyPin(pin: string, stored: string): Promise<boolean> {
     ["deriveBits"],
   );
   const derived = await crypto.subtle.deriveBits(
-    { name: "PBKDF2", salt, iterations: Number(iter), hash: "SHA-256" },
+    { name: "PBKDF2", salt: salt as BufferSource, iterations: Number(iter), hash: "SHA-256" },
     key,
     256,
   );

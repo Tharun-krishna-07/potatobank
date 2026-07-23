@@ -30,7 +30,7 @@ async function verifyCredentials(accNoStr: string, pin: string) {
   const { data, error } = await db
     .from("accounts")
     .select("acc_no, acc_name, balance, pin_hash")
-    .eq("acc_no", accNoStr)
+    .eq("acc_no", Number(accNoStr))
     .maybeSingle();
   if (error) throw new Error(error.message);
   if (!data) throw new Error("Account not found");
@@ -92,7 +92,7 @@ export const getAccount = createServerFn({ method: "POST" })
     const { data: row, error } = await db
       .from("accounts")
       .select("acc_no, acc_name, balance")
-      .eq("acc_no", data.acc_no)
+      .eq("acc_no", Number(data.acc_no))
       .maybeSingle();
     if (error) throw new Error(error.message);
     if (!row) throw new Error("Account not found");
@@ -182,7 +182,7 @@ export const listTransactions = createServerFn({ method: "POST" })
     const { data: rows, error } = await db
       .from("transactions")
       .select("transaction_id, acc_no, type, amount, related_acc_no, timestamp")
-      .eq("acc_no", data.acc_no)
+      .eq("acc_no", Number(data.acc_no))
       .order("timestamp", { ascending: false })
       .limit(200);
     if (error) throw new Error(error.message);
