@@ -14,13 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      accounts: {
+        Row: {
+          acc_name: string
+          acc_no: number
+          balance: number
+          created_at: string
+          pin_hash: string
+        }
+        Insert: {
+          acc_name: string
+          acc_no: number
+          balance?: number
+          created_at?: string
+          pin_hash: string
+        }
+        Update: {
+          acc_name?: string
+          acc_no?: number
+          balance?: number
+          created_at?: string
+          pin_hash?: string
+        }
+        Relationships: []
+      }
+      transactions: {
+        Row: {
+          acc_no: number
+          amount: number
+          related_acc_no: number | null
+          timestamp: string
+          transaction_id: number
+          type: string
+        }
+        Insert: {
+          acc_no: number
+          amount: number
+          related_acc_no?: number | null
+          timestamp?: string
+          transaction_id?: number
+          type: string
+        }
+        Update: {
+          acc_no?: number
+          amount?: number
+          related_acc_no?: number | null
+          timestamp?: string
+          transaction_id?: number
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "transactions_acc_no_fkey"
+            columns: ["acc_no"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["acc_no"]
+          },
+          {
+            foreignKeyName: "transactions_related_acc_no_fkey"
+            columns: ["related_acc_no"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["acc_no"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      generate_account_number: { Args: never; Returns: number }
+      perform_deposit: {
+        Args: { _acc_no: number; _amount: number }
+        Returns: number
+      }
+      perform_transfer: {
+        Args: { _amount: number; _from: number; _to: number }
+        Returns: number
+      }
+      perform_withdraw: {
+        Args: { _acc_no: number; _amount: number }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never
