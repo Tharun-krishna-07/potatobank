@@ -31,7 +31,10 @@ function TransferPage() {
 
   useEffect(() => {
     const sess = getSession();
-    if (!sess) return nav({ to: "/login" });
+    if (!sess) {
+      nav({ to: "/login" });
+      return;
+    }
     load({ data: { acc_no: sess.acc_no } }).then((r) => setBalance(r.balance));
   }, [load, nav]);
 

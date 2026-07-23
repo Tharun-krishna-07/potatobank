@@ -71,7 +71,10 @@ function HistoryPage() {
 
   useEffect(() => {
     const sess = getSession();
-    if (!sess) return nav({ to: "/login" });
+    if (!sess) {
+      nav({ to: "/login" });
+      return;
+    }
     load({ data: { acc_no: sess.acc_no } })
       .then(setRows)
       .finally(() => setLoading(false));
