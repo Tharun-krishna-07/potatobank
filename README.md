@@ -130,6 +130,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-Built with ❤️ by **[Your Name]**
-- GitHub: [@your-username](https://github.com/your-username)
+Built with ❤️ by **[Tharun Krishna]**
+- GitHub: [@Tharun-krishna-07](https://github.com/Tharun-krishna-07)
 - Live Demo: [halobank.lovable.app](https://halobank.lovable.app)
