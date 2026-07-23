@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Halo Bank — A calmer way to bank" },
       {
         property: "og:description",
-        content: "Instant transfers, secure PINs, beautiful design.",
+        content: "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design.",
       },
     ],
   }),

@@ -78,12 +78,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Halo Bank — Modern Banking" },
-      { name: "description", content: "A calm, premium personal banking experience." },
-      { property: "og:title", content: "Halo Bank" },
-      { property: "og:description", content: "A calm, premium personal banking experience." },
+      { title: "Halo Bank — A calmer way to bank" },
+      { name: "description", content: "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design." },
+      { property: "og:title", content: "Halo Bank — A calmer way to bank" },
+      { property: "og:description", content: "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Halo Bank — A calmer way to bank" },
+      { name: "twitter:description", content: "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d0b5d4f6-bfec-484d-aced-b6a0dc106c96/id-preview-eb8e37ef--2f086445-1153-4899-8906-ef73f3a4671d.lovable.app-1784802226352.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d0b5d4f6-bfec-484d-aced-b6a0dc106c96/id-preview-eb8e37ef--2f086445-1153-4899-8906-ef73f3a4671d.lovable.app-1784802226352.png" },
     ],
     links: [
       {
