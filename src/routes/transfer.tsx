@@ -10,7 +10,7 @@ import { Screen, SuccessCard } from "./deposit";
 export const Route = createFileRoute("/transfer")({
   head: () => ({
     meta: [
-      { title: "Transfer — Halo Bank" },
+      { title: "Transfer — PotatoBank" },
       { name: "robots", content: "noindex" },
     ],
   }),

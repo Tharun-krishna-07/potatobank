@@ -10,7 +10,7 @@ import { ArrowLeft, Check } from "lucide-react";
 export const Route = createFileRoute("/deposit")({
   head: () => ({
     meta: [
-      { title: "Deposit — Halo Bank" },
+      { title: "Deposit — PotatoBank" },
       { name: "robots", content: "noindex" },
     ],
   }),

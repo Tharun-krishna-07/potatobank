@@ -10,8 +10,8 @@ import { ArrowDownToLine, ArrowUpFromLine, LogOut, Repeat, Clock } from "lucide-
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — Halo Bank" },
-      { name: "description", content: "Your Halo Bank dashboard." },
+      { title: "Dashboard — PotatoBank" },
+      { name: "description", content: "Your PotatoBank dashboard." },
       { name: "robots", content: "noindex" },
     ],
   }),

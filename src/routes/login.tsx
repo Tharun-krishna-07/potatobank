@@ -8,8 +8,8 @@ import { setSession } from "@/lib/session";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — Halo Bank" },
-      { name: "description", content: "Sign in to your Halo Bank account." },
+      { title: "Sign in — PotatoBank" },
+      { name: "description", content: "Sign in to your PotatoBank account." },
     ],
   }),
   component: LoginPage,

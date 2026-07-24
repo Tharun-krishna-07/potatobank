@@ -23,7 +23,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <path d="M9 19v-5h6v5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
-          Halo Bank
+          PotatoBank
         </Link>
         <button
           onClick={toggle}
