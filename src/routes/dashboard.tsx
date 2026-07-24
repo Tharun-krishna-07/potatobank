@@ -71,6 +71,7 @@ function DashboardPage() {
     { label: "Withdraw", to: "/withdraw" as const, Icon: ArrowUpFromLine },
     { label: "Transfer", to: "/transfer" as const, Icon: Repeat },
     { label: "History", to: "/history" as const, Icon: Clock },
+    { label: "Leaderboard", to: "/leaderboard" as const, Icon: Trophy },
   ];
 
   return (
