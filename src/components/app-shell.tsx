@@ -17,10 +17,11 @@ export function AppShell({ children }: { children: ReactNode }) {
       <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <Link to="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
           <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-brand text-white shadow-glass">
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <path d="M3 10l9-6 9 6" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M5 10v9h14v-9" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M9 19v-5h6v5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+              <ellipse cx="12" cy="12" rx="7" ry="9" transform="rotate(-20 12 12)" />
+              <circle cx="9" cy="9" r="0.9" fill="hsl(var(--brand))" opacity="0.55" />
+              <circle cx="14" cy="11" r="0.7" fill="hsl(var(--brand))" opacity="0.55" />
+              <circle cx="11" cy="15" r="0.8" fill="hsl(var(--brand))" opacity="0.55" />
             </svg>
           </span>
           PotatoBank
