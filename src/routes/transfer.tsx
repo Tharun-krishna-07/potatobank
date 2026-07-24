@@ -63,7 +63,7 @@ function TransferPage() {
   };
 
   return (
-    <Screen title="Transfer" subtitle="Send money to another Halo account.">
+    <Screen title="Transfer" subtitle="Send money to another PotatoBank account.">
       {balance != null && (
         <div className="mb-4 text-center text-sm text-muted-foreground">
           Available:{" "}
