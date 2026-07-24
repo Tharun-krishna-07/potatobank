@@ -82,21 +82,7 @@ export type Database = {
       }
     }
     Views: {
-      leaderboard: {
-        Row: {
-          acc_name: string | null
-          balance: number | null
-        }
-        Insert: {
-          acc_name?: string | null
-          balance?: number | null
-        }
-        Update: {
-          acc_name?: string | null
-          balance?: number | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       generate_account_number: { Args: never; Returns: number }
