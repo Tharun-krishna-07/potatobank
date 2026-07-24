@@ -5,7 +5,7 @@ import { AppShell, GlassCard } from "@/components/app-shell";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { getAccount } from "@/lib/bank.functions";
 import { clearSession, getSession } from "@/lib/session";
-import { ArrowDownToLine, ArrowUpFromLine, LogOut, Repeat, Clock } from "lucide-react";
+import { ArrowDownToLine, ArrowUpFromLine, LogOut, Repeat, Clock, Trophy } from "lucide-react";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
