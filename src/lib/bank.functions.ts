@@ -205,3 +205,49 @@ export const listTransactions = createServerFn({ method: "POST" })
       };
     });
   });
+
+// --- Leaderboard (public, exposes only name + balance) ---
+export type LeaderboardEntry = { acc_name: string; balance: number };
+
+export const getLeaderboard = createServerFn({ method: "GET" }).handler(
+  async (): Promise<LeaderboardEntry[]> => {
+    const db = await admin();
+    const { data, error } = await db
+      .from("accounts")
+      .select("acc_name, balance")
+      .order("balance", { ascending: false })
+      .limit(10);
+    if (error) throw new Error(error.message);
+    return (data ?? []).map((r) => ({
+      acc_name: (r as { acc_name: string }).acc_name,
+      balance: Number((r as { balance: number }).balance),
+    }));
+  },
+);
+
+// --- My rank (returns rank and balance for a given account) ---
+export const getMyRank = createServerFn({ method: "POST" })
+  .inputValidator((d: { acc_no: string }) =>
+    z.object({ acc_no: z.string().regex(accRe) }).parse(d),
+  )
+  .handler(async ({ data }): Promise<{ rank: number; balance: number; acc_name: string }> => {
+    const db = await admin();
+    const { data: me, error: e1 } = await db
+      .from("accounts")
+      .select("acc_name, balance")
+      .eq("acc_no", Number(data.acc_no))
+      .maybeSingle();
+    if (e1) throw new Error(e1.message);
+    if (!me) throw new Error("Account not found");
+    const balance = Number((me as { balance: number }).balance);
+    const { count, error: e2 } = await db
+      .from("accounts")
+      .select("acc_no", { count: "exact", head: true })
+      .gt("balance", balance);
+    if (e2) throw new Error(e2.message);
+    return {
+      rank: (count ?? 0) + 1,
+      balance,
+      acc_name: (me as { acc_name: string }).acc_name,
+    };
+  });
