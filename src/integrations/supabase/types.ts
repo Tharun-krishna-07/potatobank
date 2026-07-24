@@ -100,7 +100,6 @@ export type Database = {
     }
     Functions: {
       generate_account_number: { Args: never; Returns: number }
-      get_rank: { Args: { _balance: number }; Returns: number }
       perform_deposit: {
         Args: { _acc_no: number; _amount: number }
         Returns: number
