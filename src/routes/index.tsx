@@ -5,16 +5,16 @@ import { ArrowRight, Shield, Sparkles, Wallet } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Halo Bank — A calmer way to bank" },
+      { title: "PotatoBank — A calmer way to bank" },
       {
         name: "description",
         content:
-          "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design.",
+          "PotatoBank is a premium personal banking experience — instant transfers, secure PINs, beautiful design.",
       },
-      { property: "og:title", content: "Halo Bank — A calmer way to bank" },
+      { property: "og:title", content: "PotatoBank — A calmer way to bank" },
       {
         property: "og:description",
-        content: "Halo Bank is a premium personal banking experience — instant transfers, secure PINs, beautiful design.",
+        content: "PotatoBank is a premium personal banking experience — instant transfers, secure PINs, beautiful design.",
       },
     ],
   }),
@@ -59,7 +59,7 @@ function Index() {
           <div className="absolute inset-0 -z-10 rounded-[3rem] bg-gradient-to-br from-brand/30 via-accent2/20 to-transparent blur-2xl" />
           <GlassCard className="w-full max-w-md">
             <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>Halo · Personal</span>
+              <span>PotatoBank · Personal</span>
               <span>•• 4271</span>
             </div>
             <div className="mt-8">

@@ -10,7 +10,7 @@ import { AmountFields, Screen, SuccessCard } from "./deposit";
 export const Route = createFileRoute("/withdraw")({
   head: () => ({
     meta: [
-      { title: "Withdraw — Halo Bank" },
+      { title: "Withdraw — PotatoBank" },
       { name: "robots", content: "noindex" },
     ],
   }),

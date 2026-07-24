@@ -16,7 +16,7 @@ import {
 export const Route = createFileRoute("/history")({
   head: () => ({
     meta: [
-      { title: "Transactions — Halo Bank" },
+      { title: "Transactions — PotatoBank" },
       { name: "robots", content: "noindex" },
     ],
   }),

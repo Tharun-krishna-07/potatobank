@@ -8,8 +8,8 @@ import { Check, Copy } from "lucide-react";
 export const Route = createFileRoute("/create")({
   head: () => ({
     meta: [
-      { title: "Open your Halo account" },
-      { name: "description", content: "Create a Halo Bank account in seconds." },
+      { title: "Open your PotatoBank account" },
+      { name: "description", content: "Create a PotatoBank account in seconds." },
     ],
   }),
   component: CreatePage,

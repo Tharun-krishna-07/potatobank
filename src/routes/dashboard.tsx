@@ -5,13 +5,13 @@ import { AppShell, GlassCard } from "@/components/app-shell";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { getAccount } from "@/lib/bank.functions";
 import { clearSession, getSession } from "@/lib/session";
-import { ArrowDownToLine, ArrowUpFromLine, LogOut, Repeat, Clock } from "lucide-react";
+import { ArrowDownToLine, ArrowUpFromLine, LogOut, Repeat, Clock, Trophy } from "lucide-react";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard — Halo Bank" },
-      { name: "description", content: "Your Halo Bank dashboard." },
+      { title: "Dashboard — PotatoBank" },
+      { name: "description", content: "Your PotatoBank dashboard." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -71,6 +71,7 @@ function DashboardPage() {
     { label: "Withdraw", to: "/withdraw" as const, Icon: ArrowUpFromLine },
     { label: "Transfer", to: "/transfer" as const, Icon: Repeat },
     { label: "History", to: "/history" as const, Icon: Clock },
+    { label: "Leaderboard", to: "/leaderboard" as const, Icon: Trophy },
   ];
 
   return (
